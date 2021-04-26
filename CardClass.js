@@ -33,18 +33,20 @@ class card{
 class deck {
     constructor() {
 
-        const suits = {'Hearts', 'Spades', 'Clubs', 'Diamonds'}
-        const faceValues = {'Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'}
+        const suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
+        const faceValues = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
 
         this.deckArray = [];
         var deckIndex = 0;
+        var value = 1;
 
-        for(let suit in suits){
+        for(var i = 0; i < suits.length; i++){
             value = 1;
-            for(let faceValue in faceValues){
-                this.deckArray.push = new Card(suit, faceValue, Value);
+            for(var j = 0; j < faceValues.length; j++){
+                this.deckArray.push(new card(suits[i], faceValues[j], value));
                 value ++;
             }
         }
     }
+    
 }
