@@ -1,22 +1,39 @@
+var dealInput = document.createElement("Input");
 var deal = document.createElement("button");
 var hitMe = document.createElement("button");
 var stay = document.createElement("button");
 var shuffle = document.createElement("button");
 var nextRound = document.createElement("button");
 //var cardBack = back.jpg;
+/*
 makeDealerTable();
-//Background Image
+Background Image
+
 function makeDealerTable(){
     document.body.style.backgroundColor = "green";
-
 }
+*/
+var d = new deck();
+var b = new card();
 
 function cardButton(){
-    this.card.createElement("button");
-    this.card.style.position = "absolute";
-    this.card.style.backgroundImage = card;
-    this.card.style.width = ;
-    this.card.style.height = ;
+    var c = document.createElement("button");
+    c.style.position = "absolute";
+    c.style.backgroundImage = "url('cards/" + d[b].cardImage + "')";
+    c.style.width = 53;
+    c.style.height = 71;
+    console.log(c);
+    //console.log("cards/" + d[0].cardImage);
+    document.body.append(c);
+}
+cardButton();
+
+function deal(f){
+    var f = Number(dealInput.value);
+    for(var i = 0; i < f; i++){
+        cardButton
+    }
 }
 
-addEventListener.cardButton("click", alert("Your card value is" + blackJackValue));
+//var d = new deck();
+//console.log(d[0].cardImage);

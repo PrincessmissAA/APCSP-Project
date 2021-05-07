@@ -55,6 +55,7 @@ class deck {
                 value ++;
             }
         }
+        return this.deckArray;
     }
 }
 
