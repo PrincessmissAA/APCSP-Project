@@ -57,7 +57,7 @@ class deck {
         }
         getDeck(){
             return this.deckArray;
-        }
+        };
     }
 }
 

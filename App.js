@@ -20,7 +20,7 @@ function makeDealerTable(){
 function cardButton(){
     var c = document.createElement("button");
     c.style.position = "absolute";
-    c.style.backgroundImage = "url('cards/" + d[0].cardImage + "')";
+    c.style.backgroundImage = "url('cards/" + d[cardArray].cardImage + "')";
     c.style.width = 53;
     c.style.height = 71;
     console.log(c);
