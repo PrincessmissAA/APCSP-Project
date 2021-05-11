@@ -55,7 +55,9 @@ class deck {
                 value ++;
             }
         }
-        return this.deckArray;
+        getDeck(){
+            return this.deckArray;
+        }
     }
 }
 
