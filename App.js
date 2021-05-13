@@ -6,37 +6,38 @@ var stay = document.createElement("button");
 var shuffle = document.createElement("button");
 var nextRound = document.createElement("button");
 var cardArray = d.getDeck();
-//var cardBack = back.jpg;
-/*
-makeDealerTable();
-Background Image
+var dealtHolder = document.createElement("div");
+document.body.append(dealtHolder);
+dealtHolder.innerHTML = "";
 
-function makeDealerTable(){
-    document.body.style.backgroundColor = "green";
-}
 
-//var cardArray = d.getcard();
-*/
-function cardButton(){
-    var c = document.createElement("button");
-    c.style.position = "absolute";
-    c.style.backgroundImage = "url('cards/" + d[cardArray].cardImage + "')";
-    c.style.width = 53;
-    c.style.height = 71;
-    console.log(c);
-    //console.log("cards/" + d[0].cardImage);
-    document.body.append(c);
-}
+makeButtonElements();
+dealCards(dealInput.value);//put dealInput.value here
 
-cardButton();
-
-function deal(f){
+function dealCards(f){
+    //console.log(f);
     var f = Number(dealInput.value);
+    var dealCardArray = [];
     for(var i = 0; i < f; i++){
-        cardArray.push.cardButton();
-
+    
+        dealCardArray.push(cardArray[i]);
+        var b = dealCardArray[i].cardButton(dealCardArray[i]);
+        b.style.position = "absolute";
+        b.style.left = i*50;
+        b.style.top = 50;
+ 
+        dealtHolder.append(b);
     }
 }
 
+function makeButtonElements(){
+    deal.innerHTML = "deal";
+    deal.style.margin = "3px";
+    document.body.append(deal);
+    deal.addEventListener("click", dealCards);
+
+    dealInput.placeholder = "enter dealSize";
+    document.body.append(dealInput);
+}
 //var d = new deck();
 //console.log(d[0].cardImage);

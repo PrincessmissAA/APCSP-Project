@@ -32,6 +32,19 @@ class card{
         return this.cardImage;
     }
 
+    cardButton(c){
+        var c = document.createElement("button");
+        console.log(c);
+        c.style.position = "absolute";
+        c.style.backgroundImage = "url('cards/" + this.cardImage + "')";
+        c.style.width = 53;
+        c.style.height = 71;
+        //console.log(c);
+        //console.log("cards/" + d[0].cardImage);
+        //document.body.append(c);
+        return c;
+    }
+
 }
 
 //Makes the deck.
@@ -55,9 +68,9 @@ class deck {
                 value ++;
             }
         }
-        getDeck(){
-            return this.deckArray;
-        };
+    }
+    getDeck(){
+        return this.deckArray;
     }
 }
 
