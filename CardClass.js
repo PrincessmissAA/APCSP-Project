@@ -35,12 +35,11 @@ class card{
         var c = document.createElement("button");
         console.log(c);
         c.style.position = "absolute";
+        // Card images came from Dulaya's repo
+        // Project videopoker: https://github.com/Dulaya/videopoker.git
         c.style.backgroundImage = "url('cards/" + this.cardImage + "')";
         c.style.width = 53;
         c.style.height = 71;
-        //console.log(c);
-        //console.log("cards/" + d[0].cardImage);
-        //document.body.append(c);
         return c;
     }
 
