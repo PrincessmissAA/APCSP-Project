@@ -1,4 +1,3 @@
-//Makes the cards and card values.
 class card{
     constructor(suit, faceValue, value, cardImageName) {
         this.suit = suit;

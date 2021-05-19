@@ -14,28 +14,42 @@ var dealtHolderplayer = document.getElementById("playerone")
 var dealtHolderdealer = document.getElementById("playertwo")
 
 makeButtonElements();
-dealCards(dealInput.value);
+
+function prepTable() {
+
+    shuffleCards();
+    while (dealtHolderplayer.firstChild) {
+        dealtHolderplayer.removeChild(dealtHolderplayer.firstChild);
+    }
+    while (dealtHolderdealer.firstChild) {
+        dealtHolderdealer.removeChild(dealtHolderdealer.firstChild);
+    }
+
+    var f = Number(dealInput.value);
+    dealCards(f);
+}
 
 function dealCards(f) {
-    shuffleCards();
-    var f = Number(dealInput.value) * 2;
-    var dealCardArray = [];
+    if (f > 26) {
+        f = 52;
+    } else if (f < 1) {
+        f = 0;
+    } else {
+        f = f * 2;
+    }
 
     for (var i = 0; i < f; i++) {
         if (i % 2 == 0) {
-            dealCardArray.push(cardArray[i]);
-            var b = dealCardArray[i].cardButton(dealCardArray[i]);
+            var b = cardArray[i].cardButton(cardArray[i]);
             b.style.position = "relative";
             dealtHolderplayer.append(b);
         } else {
-            dealCardArray.push(cardArray[i]);
-            var c = dealCardArray[i].cardButton(dealCardArray[i]);
-            c.style.position = "relative";
-            dealtHolderdealer.append(c);
+            var b = cardArray[i].cardButton(cardArray[i]);
+            b.style.position = "relative";
+            dealtHolderdealer.append(b);
         }
     }
 }
-
 
 function shuffleCards() {
     for (var i = 0; i < cardArray.length; i++) {
@@ -68,6 +82,6 @@ function makeButtonElements() {
     deal.innerHTML = "deal";
     deal.style.margin = "3px";
     document.body.prepend(deal);
-    deal.addEventListener("click", dealCards);
+    deal.addEventListener("click", prepTable);
 
 }
